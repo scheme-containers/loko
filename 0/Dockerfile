@@ -12,5 +12,6 @@ RUN make install && rm /usr/local/bin/scheme-banner
 
 FROM debian:buster-slim
 COPY --from=build /usr/local /usr/local
-RUN ln -s loko /usr/local/bin/scheme-banner && ln -s loko /usr/local/bin/scheme-script
+RUN ln -s loko /usr/local/bin/scheme-banner \
+ && ln -s loko /usr/local/bin/scheme-script
 CMD ["scheme-banner"]
