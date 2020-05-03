@@ -1,7 +1,7 @@
 # -*- mode: dockerfile; coding: utf-8 -*-
 FROM akkuscm/akku:latest AS build
 WORKDIR /build
-RUN git clone https://gitlab.com/weinholt/loko.git
+RUN git clone --depth 1 https://gitlab.com/weinholt/loko.git
 WORKDIR /build/loko
 RUN akku --debug install
 RUN apk add make
